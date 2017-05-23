@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # spyn
 
 Implementing Sum-Product Networks (SPN) in python and providing
@@ -62,3 +63,7 @@ To get an overview of the possible parameters use `-h`:
 To run a grid search you can do:
 
     ipython -- bin/learnspn_exp.py nltcs -k 2 -c GMM -g 5 10 15 20 -m 10 50 100 500 -a 0.1 0.2 0.5 1.0 2.0 -o exp/learnspn-f/
+=======
+# spn
+working on sum product network inference
+>>>>>>> 3fa90ac82ecfe448e0583d1485d6d70f97e65efe
