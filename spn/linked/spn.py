@@ -676,8 +676,9 @@ class Spn(AbstractSpn):
         while i in evidence_dic:
             evidence.append(evidence_dic[i])
             i+=1
-
-        return evidence, self.exact_eval(numpy.array(evidence))
+        poon_max = self.exact_eval(numpy.array(evidence))
+        print("the maximum found by Poon algo is {}".format(poon_max))
+        return poon_max, evidence
 
     def fit(self, train, valid, test, algo='sgd', options=None):
         """

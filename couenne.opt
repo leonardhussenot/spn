@@ -322,4 +322,4 @@ feas_tolerance 1e-6
 use_quadratic no
 
 
-time_limit 600
+time_limit 2400
