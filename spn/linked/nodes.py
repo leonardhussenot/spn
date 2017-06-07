@@ -252,6 +252,18 @@ class SumNode(Node):
         else:
             self.log_val = log(w_sum)
 
+    def eval_one_node(self, i):
+        w_sum = 0
+        for node, log_weight in zip(self.children, self.log_weights):
+            w_sum += exp(node.eval_one_node(i) + log_weight)
+
+        if w_sum == 0:
+            self.log_val = LOG_ZERO
+        else:
+            self.log_val = log(w_sum)
+
+        return self.log_val
+
 
     def backprop(self):
         """
@@ -425,6 +437,15 @@ class ProductNode(Node):
         #     eval_prod_node(numpy.array([child.log_val
         #                                 for child in self.children]))
         # return self.log_val
+
+   def eval_one_node(self, i):
+        """
+        WRITEME
+        """
+        self.log_val = 0.0
+        for node in self.children:
+            self.log_val += node.eval_one_node(i)
+
     def exact_eval(self):
         self.eval()
 
