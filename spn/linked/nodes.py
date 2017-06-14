@@ -321,6 +321,7 @@ class SumNode(Node):
         for scope1, scope2 in utils.pairwise(children_scopes):
             if scope1 != scope2:
                 _complete = False
+                print(self)
                 break
 
         return _complete
@@ -438,7 +439,7 @@ class ProductNode(Node):
         #                                 for child in self.children]))
         # return self.log_val
 
-   def eval_one_node(self, i):
+    def eval_one_node(self, i):
         """
         WRITEME
         """
@@ -561,6 +562,9 @@ class ProductNode(Node):
             for scope_var in child_scope:
                 if scope_var in whole:
                     decomposable = False
+                    print(self)
+                    for child in self.children:
+                        print("\n child," , child)
                     break
                 else:
                     whole.add(scope_var)
