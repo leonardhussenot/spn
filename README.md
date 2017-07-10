@@ -1,8 +1,37 @@
-<<<<<<< HEAD
+
+# Developing inference on the SPYN package (https://github.com/arranger1044/spyn)
+
+Initial package has been completed and modified to deal test Maximum-A-Posteriori Inference on different classes of sum Product Network.
+To use package normally, see spyn part below.
+Goal was to compare the result of the max-product algorithm with an exact algorithm on different class of SPNs:
+
+To do test on inference, see the MAP_inference.pynb jupiter notebook, composed of these parts:
+
+## The Poon Algorithm (or Max-Product Algorithm)
+Implementing the max-product approximation for most probable evidence, now integrated in the library itself.
+
+## Branch & Bound Algorithm
+Implementing exact inference with different heuristics
+
+##Exact Solver
+A link to an Couenne, an exact solver (works only on small problems and require the installation of Couenne, see: https://projects.coin-or.org/Couenne )
+
+## idSPN : Transorm AC in SPN
+A translation from an SPN learned thanks to libra library (the idSPN algorithm),  see : http://libra.cs.uoregon.edu/
+The SPN was composed of arithmetic circuit and we had to implement a translation from arithmetic circuit to sum-product network. 
+Finding the layer structure can be done much faster. TODO : find a better algorithm than looking for all paths from node to leaves.
+
+## From tree to graph
+An implementation on the algorithm for merging subtrees to avoid overfitting: Merging Strategies for Sum-Product Networks: From Trees to Graphs. from T. Rahman & V. Gogate 
+Need to be finished (TODO).
+
+
 # spyn
 
 Implementing Sum-Product Networks (SPN) in python and providing
 some routines to do inference and learning.
+
+
 
 ## overview
 
@@ -63,7 +92,4 @@ To get an overview of the possible parameters use `-h`:
 To run a grid search you can do:
 
     ipython -- bin/learnspn_exp.py nltcs -k 2 -c GMM -g 5 10 15 20 -m 10 50 100 500 -a 0.1 0.2 0.5 1.0 2.0 -o exp/learnspn-f/
-=======
-# spn
-working on sum product network inference
->>>>>>> 3fa90ac82ecfe448e0583d1485d6d70f97e65efe
+
