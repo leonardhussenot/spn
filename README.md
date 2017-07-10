@@ -13,7 +13,7 @@ Implementing the max-product approximation for most probable evidence, now integ
 ## Branch & Bound Algorithm
 Implementing exact inference with different heuristics
 
-##Exact Solver
+## Exact Solver
 A link to an Couenne, an exact solver (works only on small problems and require the installation of Couenne, see: https://projects.coin-or.org/Couenne )
 
 ## idSPN : Transorm AC in SPN
