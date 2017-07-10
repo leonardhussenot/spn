@@ -5,7 +5,7 @@ Initial package has been completed and modified to deal test Maximum-A-Posterior
 To use package normally, see spyn part below.
 Goal was to compare the result of the max-product algorithm with an exact algorithm on different class of SPNs:
 
-To do test on inference, see the MAP_inference.pynb jupiter notebook, composed of these parts:
+To do test on inference, see the MAP_inference.pynb jupyter notebook, composed of these parts:
 
 ## The Poon Algorithm (or Max-Product Algorithm)
 Implementing the max-product approximation for most probable evidence, now integrated in the library itself.
